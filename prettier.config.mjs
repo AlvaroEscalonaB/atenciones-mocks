@@ -2,11 +2,11 @@ const config = {
   printWidth: 80,
   tabWidth: 2,
   useTabs: false,
-  semi: true,
-  singleQuote: false,
-  trailingComma: "all",
+  semi: false,
+  singleQuote: true,
+  trailingComma: 'all',
   bracketSpacing: true,
-  arrowParens: "avoid",
-};
+  arrowParens: 'always',
+}
 
-export default config;
+export default config

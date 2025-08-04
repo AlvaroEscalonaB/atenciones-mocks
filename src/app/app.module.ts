@@ -1,11 +1,13 @@
-import { Module } from "@nestjs/common";
-import { ConfigModule } from "@nestjs/config";
+import { Module } from '@nestjs/common'
+import { ConfigModule } from '@nestjs/config'
 
-import { HealthModule } from "@/app/health/health.module";
+import { HealthModule } from '@/app/health/health.module'
 
-import { LoggerModule } from "@/shared/logger/logger.module";
+import { LoggerModule } from '@/shared/logger/logger.module'
 
-import { UserModule } from "@/contexts/users/user.module";
+import { UserModule } from '@/contexts/users/user.module'
+
+import { SissanModule } from './sissan/sissan.module'
 
 @Module({
   imports: [
@@ -13,6 +15,7 @@ import { UserModule } from "@/contexts/users/user.module";
     LoggerModule,
     HealthModule,
     UserModule,
+    SissanModule,
   ],
 })
 export class AppModule {}
