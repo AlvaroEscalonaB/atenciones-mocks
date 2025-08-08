@@ -8,6 +8,7 @@ import { LoggerModule } from '@/shared/logger/logger.module'
 import { UserModule } from '@/contexts/users/user.module'
 
 import { SissanModule } from './sissan/sissan.module'
+import { TeletonModule } from './teleton/teleton.module'
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { SissanModule } from './sissan/sissan.module'
     HealthModule,
     UserModule,
     SissanModule,
+    TeletonModule,
   ],
 })
 export class AppModule {}

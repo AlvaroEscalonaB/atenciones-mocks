@@ -12,15 +12,11 @@
     "plugin:@typescript-eslint/strict-type-checked",
     "plugin:@typescript-eslint/stylistic-type-checked",
     "plugin:prettier/recommended",
-    "plugin:unicorn/recommended",
     "plugin:node/recommended"
   ],
   "rules": {
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
-    "unicorn/prefer-module": "off",
-    "unicorn/prefer-top-level-await": "off",
-    "unicorn/prevent-abbreviations": "off",
     "no-console": "warn",
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": [
@@ -90,9 +86,6 @@
     {
       "files": ["tests/performance/**"],
       "rules": {
-        "unicorn/numeric-separators-style": "off",
-        "unicorn/no-anonymous-default-export": "off",
-        "eslint-plugin-unicorn/no-null": "off",
         "@typescript-eslint/no-unsafe-call": "off",
         "@typescript-eslint/no-unsafe-assignment": "off",
         "@typescript-eslint/no-unsafe-member-access": "off",
