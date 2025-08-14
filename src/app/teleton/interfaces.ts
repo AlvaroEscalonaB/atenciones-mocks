@@ -1,3 +1,19 @@
+export const ESTADO_CITA = {
+  NULL: 0,
+  Agendada: 1,
+  Confirmada: 2,
+  Anulada: 3,
+  Bloqueada: 4,
+  Asistida: 5,
+  'No Asistida': 6,
+  'Pendiente Autorización': 7,
+  Autorizada: 8,
+  'No Autorizada': 9,
+} as const
+
+export type EstadoCitaKey = keyof typeof ESTADO_CITA
+export type EstadoCitaValue = (typeof ESTADO_CITA)[EstadoCitaKey]
+
 // Input for /ListarCita endpoint
 export interface ListarCitaInput {
   FichaId: number
@@ -23,9 +39,10 @@ export interface TeletonAppointment {
   Tratante: string | null
   Instituto: string | null
   TipoAutorizacion: number
-  Estado: number
+  Estado: EstadoCitaValue
   Rut: string
-  EstadoNombre: string
+  NombrePaciente: string
+  EstadoNombre: EstadoCitaKey
   LogId: number
 }
 

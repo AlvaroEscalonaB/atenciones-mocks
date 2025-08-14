@@ -7,23 +7,38 @@ import { DateTime } from 'luxon'
 
 export const getTeletonAppointmentMock = (): TeletonAppointmentResponse => {
   const mockDate = DateTime.now()
-    .plus({ minutes: 20 })
-    .toFormat('yyyy-MM-ddTHH:mm:ss')
   return {
     Data: [
       {
         FichaId: 83_601,
         CitaId: 6_807_991,
         IndicacionActividadId: 3_581_344,
-        Desde: mockDate,
-        Hasta: mockDate,
+        Desde: mockDate.plus({ minutes: 0 }).toFormat(`yyyy-MM-dd'T'HH:mm:ss`),
+        Hasta: mockDate.plus({ minutes: 30 }).toFormat(`yyyy-MM-dd'T'HH:mm:ss`),
+        Especialidad: 'KINESIÓLOGO',
+        Tratante: 'Carolina Siques Sambuceti',
+        Instituto: 'Teleton Ecuador',
+        TipoAutorizacion: 0,
+        Estado: 5,
+        NombrePaciente: 'JORGE DE LA CERDA VALDIVIA',
+        Rut: '23024428-6',
+        EstadoNombre: 'Agendada',
+        LogId: 0,
+      },
+      {
+        FichaId: 83_601,
+        CitaId: 6_807_992,
+        IndicacionActividadId: 3_581_345,
+        Desde: mockDate.plus({ minutes: 30 }).toFormat(`yyyy-MM-dd'T'HH:mm:ss`),
+        Hasta: mockDate.plus({ minutes: 60 }).toFormat(`yyyy-MM-dd'T'HH:mm:ss`),
         Especialidad: 'KINESIÓLOGO',
         Tratante: 'Carolina Siques Sambuceti',
         Instituto: 'Teleton Ecuador',
         TipoAutorizacion: 0,
         Estado: 5,
         Rut: '23024428-6',
-        EstadoNombre: 'Asistida',
+        NombrePaciente: 'JORGE DE LA CERDA VALDIVIA',
+        EstadoNombre: 'Agendada',
         LogId: 0,
       },
     ],
