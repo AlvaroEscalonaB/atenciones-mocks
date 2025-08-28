@@ -2,6 +2,8 @@ import { Global, Logger, Module, Provider } from '@nestjs/common'
 import { LogLevel } from '@nestjs/common/services/logger.service'
 import { ConfigService } from '@nestjs/config'
 
+import { HttpLoggingInterceptor } from './http-logging.interceptor'
+
 const loggerProvider: Provider = {
   provide: Logger,
   useFactory: (configService: ConfigService) => {
@@ -15,7 +17,7 @@ const loggerProvider: Provider = {
 
 @Global()
 @Module({
-  providers: [loggerProvider],
-  exports: [loggerProvider],
+  providers: [loggerProvider, HttpLoggingInterceptor],
+  exports: [loggerProvider, HttpLoggingInterceptor],
 })
 export class LoggerModule {}
