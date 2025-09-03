@@ -153,16 +153,3 @@ brew install k6
 node --run test:performance
 ```
 
-## 💅 Linting
-
-To run the linter you can execute:
-
-```bash
-node --run lint
-```
-
-And for trying to fix lint issues automatically, you can run:
-
-```bash
-node --run lint:fix
-```
