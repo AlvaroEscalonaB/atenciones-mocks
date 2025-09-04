@@ -40,9 +40,23 @@ export class SiidraController {
   getAppointments(
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     @Authorization() authorization: string,
-    @Body(createZodValidationPipe(getSiidraAppointmentSchema)) // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    @Body(createZodValidationPipe(getSiidraAppointmentSchema))
     tokenParams: SiidraGetAppointment,
   ): SiidraAppointmentResponse {
+    // Generate specific mock data based on RUT
+    const rut = tokenParams.rutPaciente
+
+    if (rut === '11111111-1') {
+      return getSiidraAppointmentMock('Amarillo', '1', 'Amarillo1', rut)
+    } else if (rut === '22222222-2') {
+      return getSiidraAppointmentMock('Azul', '1', 'Azul1', rut)
+    } else if (rut === '33333333-3') {
+      return getSiidraAppointmentMock('Verde', '2', 'Verde2', rut)
+    } else if (rut === '44444444-4') {
+      return getSiidraAppointmentMock('', '', '', rut)
+    }
+
+    // Default mock for any other RUT
     return getSiidraAppointmentMock()
   }
 
