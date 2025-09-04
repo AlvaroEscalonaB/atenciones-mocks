@@ -110,7 +110,7 @@ export const getSiidraAppointmentMock = (
       {
         idCupo: 73438971,
         fecha: mockDate.toFormat('yyyy-MM-dd'),
-        hora2: mockDate.plus({ hours: 1 }).toFormat('HH:mm'),
+        hora: mockDate.plus({ minutes: 5 }).toFormat('HH:mm'),
         rutPaciente: finalRut,
         nombres: patientData.nombres,
         primerApellido: patientData.primerApellido,

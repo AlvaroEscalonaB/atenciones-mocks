@@ -1,7 +1,7 @@
 export interface SiidraAppointment {
   idCupo: number
   fecha: string
-  hora2: string
+  hora: string
   rutPaciente: string
   nombres: string
   primerApellido: string
